@@ -1,0 +1,24 @@
+---
+description: Project-wide product scope, engineering conventions, and safety constraints.
+alwaysApply: true
+---
+
+# Smart Patient Intake — Project Rules
+
+- This is a small interview portfolio MVP, not a production medical system.
+- Use synthetic patient data only. Never request, create, commit, or process real patient records.
+- Follow `docs/spec.md`, `docs/ARCHITECTURE.md`, and `docs/API_SPEC.md`. If they conflict, stop and ask before changing a frozen product decision.
+- Do not add features outside the frozen MVP without explicit approval.
+- Use TypeScript throughout frontend, backend, and shared contracts.
+- Prefer strict typing; do not use `any` unless there is a documented, narrowly scoped reason.
+- Keep code modular and readable; avoid premature abstractions and unnecessary dependencies.
+- Validate all untrusted input at runtime.
+- Preserve original patient answers and original extracted document text. Never overwrite source data with AI output or staff edits.
+- Treat OCR text and AI output as untrusted.
+- AI must not diagnose, triage, recommend treatment, or make clinical decisions.
+- Every summarized fact must have source attribution where available; uncertainty and conflicts must remain visible.
+- A human must review and approve a summary. AI generation alone must never mark an intake approved.
+- Never log patient content, document text, prompts, summaries, credentials, or secrets.
+- Never expose provider credentials in frontend code.
+- Do not claim GDPR compliance, clinical validation, or production readiness.
+- Before finishing a task: run relevant tests, typecheck, inspect the diff, and report any remaining limitations.

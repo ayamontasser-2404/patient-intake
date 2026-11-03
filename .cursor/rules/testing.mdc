@@ -1,0 +1,17 @@
+---
+description: Testing expectations for critical workflows.
+globs: "**/*.{test,spec}.{ts,tsx}"
+---
+
+# Testing Rules
+
+- Test behavior and public contracts, not implementation details.
+- Use synthetic fixtures with obviously fictional names and data.
+- Cover Zod schemas, status transitions, and API error mapping.
+- Cover PDF embedded-text path, scanned-PDF OCR path, and image OCR path.
+- Cover unsupported file, size limit, page limit, and unreadable document errors.
+- Cover invalid AI JSON and schema rejection.
+- Cover source attribution and preservation of original input.
+- Cover approval, return, and invalidation of approval after material edits.
+- Avoid live AI calls in automated tests; use deterministic providers.
+- Do not include real patient information in snapshots, fixtures, or logs.

@@ -1,0 +1,12 @@
+import { z } from 'zod';
+
+export const healthStatusSchema = z.object({
+  status: z.literal('ok'),
+});
+
+export const healthResponseSchema = z.object({
+  data: healthStatusSchema,
+});
+
+export type HealthStatus = z.infer<typeof healthStatusSchema>;
+export type HealthResponse = z.infer<typeof healthResponseSchema>;

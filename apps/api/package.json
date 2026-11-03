@@ -1,0 +1,29 @@
+{
+  "name": "@spi/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "pnpm --filter @spi/contracts build",
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "pretypecheck": "pnpm --filter @spi/contracts build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "pretest": "pnpm --filter @spi/contracts build",
+    "test": "tsx --test src/app.test.ts src/env.test.ts",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@spi/contracts": "workspace:*",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
+  }
+}
