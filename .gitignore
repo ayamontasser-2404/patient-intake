@@ -1,0 +1,7 @@
+.DS_Store
+node_modules
+web/dist
+web/coverage
+intake-agent/.agent-serve
+intake-agent/memory
+*.log
