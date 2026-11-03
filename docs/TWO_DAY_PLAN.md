@@ -1,6 +1,6 @@
 # Two-day interview plan
 
-You already have a repo you can run. Use the two days to **practice speaking and changing code**, not to invent a new product.
+You already have a repo you can run. Use the two days to **practice speaking and changing code**, not to invent a new product. The target role is ETERNO Innovation Team. Keep `docs/INTERVIEW.md` next to this file.
 
 ## Day 1 — understand and demo the agent
 
@@ -24,13 +24,13 @@ npx --yes "@grok/agent-sdk@0.5.0" dev
 5. Add one optional field, `emergencyName`, using `intake-agent/bot/skills/add-a-field.md`.
 6. Call `get_intake_schema` again and confirm the id.
 7. Revert or keep the field. Either is fine. The point is that you can change it.
-8. Write five interview sentences:
+8. Write the five sentences in `docs/INTERVIEW.md` out loud:
 
-- What the user can do in v1
-- What you refused to build
+- What v1 does in an ETERNO Space waiting room
+- Why AWS is the next slice, not this slice
 - Where field ids live
-- How the agent avoids diagnosis
-- How you would add insurance next week
+- How the agent is fenced
+- What you would do in week one on the Innovation Team
 
 ## Day 2 — design system and the form
 
@@ -58,8 +58,8 @@ npm run dev
 
 - Add the visit screen. Copy PersonalInfo. Do not refactor into a generic form factory yet.
 - Record a 90-second demo.
-- Do not start a backend.
+- Sketch the Lambda handler on paper. Do not stand up AWS.
 
 ## What to say if they ask “why so small?”
 
-The clinic cannot use a form you cannot change. v1 is small so every file has a job you can defend.
+Innovation MVPs have to survive a real practice. A form I cannot change is not useful in an ETERNO Space. v1 is small so every file has a job I can defend.

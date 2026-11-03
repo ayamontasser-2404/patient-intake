@@ -1,6 +1,6 @@
 # Accessibility guidelines
 
-Clinic intake is used by people who are unwell, anxious, or using a shared tablet. Accessibility is part of the product, not a polish pass.
+Clinic intake is used by people who are unwell, anxious, or using a shared tablet in a waiting room (including an ETERNO Space). Accessibility is part of the product, not a polish pass.
 
 v1 target: **WCAG 2.2 AA**.
 

@@ -2,9 +2,11 @@
 
 This is the product contract. If code and this file disagree, change the code.
 
+This MVP is a **digital Anamnese** slice: structured medical history before the visit. That is one of the core ETERNO Cloud processes (appointment → history → documentation). It is a demo, not Cloud production.
+
 ## Problem
 
-A patient who already found a doctor still fills a paper form. Staff retype the answers. The clinic needs a short digital intake that a person can finish in the waiting room, and that staff can complete with an assistant when the patient is on the phone.
+A patient who already has an appointment still fills a paper Anamnese. Staff retype it. An outpatient practice needs a short digital history that a person can finish in the waiting room, and that staff can complete with an assistant when the patient is on the phone.
 
 ## Users
 
@@ -29,11 +31,12 @@ Staff can ask the agent to fill the draft one field at a time. The agent never d
 
 ## Out of scope
 
-- Real patient records, EHR, or insurance eligibility
-- Accounts, passwords, or SSO
-- Payments
-- Full social security numbers
-- Clinical advice
+- Real patient records, TIM, or KV Connect
+- Accounts, Cognito, or SSO
+- Payments and billing
+- German social security numbers (SVNR)
+- Clinical advice, OCR, or speech
+- AWS deploy for v1
 
 ## Field list
 
@@ -49,7 +52,7 @@ The agent schema in `intake-agent/bot/lib/intake.ts` is the source of truth. v1 
 | reason | visit | yes | later |
 | preferredLanguage | visit | yes | later |
 | payer | insurance | no | later |
-| memberId | insurance | no | later |
+| memberId | insurance | no | later (Versichertennummer, never SVNR) |
 | allergies | history | yes | later |
 | medications | history | yes | later |
 

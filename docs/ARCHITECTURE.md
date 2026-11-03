@@ -1,20 +1,26 @@
 # Patient intake — architecture
 
-Keep this drawing in your head. The UI and the agent share field ids. They do not share a server yet.
+Keep this drawing in your head. The UI and the agent share field ids. They do not share a server yet. That is deliberate: Innovation MVPs freeze the contract before they pay for AWS.
 
 ```text
   Patient / staff
         |
-        +-- web/          React screens, local React state
+        +-- web/          React + TypeScript screens, local state
         |
-        +-- intake-agent/ Playground chat, tools, ctx.host.kv
+        +-- intake-agent/ LLM assistant, tools, session kv
                 |
                 +-- bot/lib/intake.ts   field list + merge rules
+
+  Next slice (not in v1)
+
+        web  ──POST /drafts──►  API Gateway
+        agent ────────────────►  Lambda (TypeScript)
+                                 DynamoDB item  visitId
 ```
 
 ## Why two programs
 
-The interview needs an **agent** you can demo today and a **form** you can keep coding. A shared TypeScript list of fields is the contract. A database can wait.
+The interview needs a **React MVP** and an **LLM workflow** you can demo today. A shared TypeScript list of fields is the contract. DynamoDB waits until those ids stop moving. That is fullstack ownership without a fake platform.
 
 ## Web app
 
@@ -56,6 +62,7 @@ Unknown keys are dropped on save. Empty strings delete a key. Required fields wi
 
 1. Visit and history screens that read the same field ids.
 2. One shared `packages/intake` module so the web copy of the field list goes away.
-3. A save API only after the form is boring and correct.
+3. `PUT /drafts/{visitId}` as a TypeScript Lambda behind API Gateway, item in DynamoDB, no PHI in logs.
+4. Only then Cognito, if staff and patients must be different identities.
 
-Do not add Redux, a database, or auth until those three are done.
+Do not add Redux, Step Functions, or Bedrock until the form is boring and the ids are stable. Python belongs on the OCR/speech slice, not on this form.

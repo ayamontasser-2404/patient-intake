@@ -8,7 +8,7 @@ export default defineTool({
   async execute() {
     return {
       demo: true,
-      notice: "All data is fictional. Do not collect a social security number.",
+      notice: "All data is fictional. Do not collect a German social security number (SVNR).",
       fields: INTAKE_FIELDS,
     }
   },

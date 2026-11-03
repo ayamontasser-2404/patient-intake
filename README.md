@@ -1,19 +1,20 @@
 # patient-intake
 
-A clinic intake demo you can explain and keep coding yourself.
+Digital Anamnese MVP for an outpatient practice. Built as interview material for the ETERNO Innovation Team.
 
-A patient (or a staff member on a call) enters a short set of fields. An assistant agent can fill the **same field ids** in a playground. There is no backend and no real patient data.
+A patient in the waiting room, or a staff member on a call, enters a short medical-history form. An assistant writes the **same field ids**. There is no backend and no real patient data. The next honest backend is one TypeScript Lambda and a DynamoDB item.
 
-Use this README in the interview. Use `docs/` when they ask “why”.
+Use this README in the interview. Open `docs/INTERVIEW.md` the night before.
 
 ## 30-second pitch
 
-> This is a two-day healthcare demo. The form is a small React app. The assistant is an Agent SDK project. Both use one list of field ids. Design tokens, accessibility rules, and the Figma file are written down so I can change a screen without guessing colors. v1 stops at personal details plus review. The next screens already have names in the spec.
+> ETERNO Cloud already names digital medical history as a core practice workflow. This is that slice as a two-day Innovation MVP. React and TypeScript own the form. An LLM assistant fills the same field ids for staff. v1 stops at personal details plus review so I can change a field without a rewrite. Persistence is sketched as API Gateway, Lambda, and DynamoDB — not built — because the ids should freeze first.
 
 ## What to open in the interview
 
 | Artifact | Path |
 | --- | --- |
+| Interview notes | `docs/INTERVIEW.md` |
 | Spec | `docs/SPEC.md` |
 | Architecture | `docs/ARCHITECTURE.md` |
 | Two-day plan | `docs/TWO_DAY_PLAN.md` |
@@ -24,14 +25,15 @@ Use this README in the interview. Use `docs/` when they ask “why”.
 | Form | `web/` |
 | Figma | [Patient Intake](https://www.figma.com/design/TNzpWrQxVTH5WF1FFR0N0x/Patient-Intake) |
 
-## Why this fits a product interview
+## Why this fits ETERNO
 
-- **You can take the keyboard.** Every file is small. Adding a field is a list edit, not a rewrite.
-- **Healthcare habits.** Demo data only. No social security number. The agent does not diagnose.
-- **Design as engineering.** Tokens, AA contrast, and a Figma workflow sit next to the code.
-- **Agent as a tool user.** The model talks. TypeScript owns the schema and the missing-field list.
+- **React MVP, full workflow.** Three screens plus a staff agent, not a isolated widget.
+- **Frontend-first fullstack.** UI and typed contract today. Serverless persistence is the named next slice, in their stack.
+- **LLM with a fence.** The model talks. TypeScript owns keys, merge, and missing fields. No diagnosis.
+- **Practice reality.** Fictional Berlin demo patient. No German SVNR. AA labels for a waiting-room tablet.
+- **Fast iteration, not theatre.** No CDK, Cognito, or Step Functions until the form is stable.
 
-If the company is clinical, talk safety and accessibility. If the company is a platform, talk the agent tools and the eval. If they build UI, walk the form and the tokens.
+Role posting: [Fullstack Engineer, Frontend Focus, Innovation Team](https://careers.eterno.group/en/jobs/8490488-fullstack-engineer-frontend-focus-innovation-team-mid-senior).
 
 ## How a React screen works here
 
