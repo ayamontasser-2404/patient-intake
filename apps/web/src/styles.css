@@ -1,0 +1,133 @@
+:root {
+  color-scheme: light;
+  --paper: #f3f1ea;
+  --ink: #1f2a2e;
+  --muted: #44555a;
+  --accent: #1f6f6a;
+  --card: #fffdf8;
+  --line: #ddd6c8;
+  --notice: #fff6e8;
+  --notice-ink: #5c3d12;
+  --notice-line: #e0b15a;
+  font-family:
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  transform: translateY(-150%);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.4rem;
+  z-index: 1;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.shell {
+  width: min(40rem, calc(100% - 2rem));
+  margin-inline: auto;
+  padding-block: clamp(2.5rem, 8vw, 5rem);
+}
+
+.site-header h1,
+.status h2,
+.lead,
+.notice p,
+.site-footer p,
+.eyebrow {
+  margin: 0;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-header h1 {
+  margin-top: 0.4rem;
+  font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.lead {
+  margin-top: 1.25rem;
+  max-width: 38rem;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.notice {
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--notice-line);
+  border-radius: 0.75rem;
+  background: var(--notice);
+  color: var(--notice-ink);
+}
+
+.status {
+  margin-top: 1.5rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--card);
+}
+
+.status h2 {
+  font-size: 1.05rem;
+}
+
+.status p {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+}
+
+.site-footer {
+  margin-top: 1.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+@media (max-width: 24rem) {
+  .shell {
+    width: min(40rem, calc(100% - 1.25rem));
+  }
+}

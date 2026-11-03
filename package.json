@@ -1,0 +1,31 @@
+{
+  "name": "smart-patient-intake",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.4",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter @spi/web --filter @spi/api dev",
+    "build": "pnpm --filter @spi/contracts --filter @spi/api --filter @spi/web build",
+    "typecheck": "pnpm --filter @spi/contracts --filter @spi/api --filter @spi/web typecheck",
+    "test": "pnpm --filter @spi/contracts --filter @spi/api --filter @spi/web test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}

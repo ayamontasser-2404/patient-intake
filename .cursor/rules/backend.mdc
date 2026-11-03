@@ -1,0 +1,22 @@
+---
+description: Express backend, domain services, persistence, and upload safety.
+globs: apps/api/**/*.ts
+---
+
+# Backend Rules
+
+- Keep routes/controllers thin. Put business rules in application/domain services.
+- Put database access behind repositories. Do not write SQL in route handlers.
+- Validate params, query strings, bodies, and upload metadata at the API boundary.
+- Use shared Zod contracts wherever practical.
+- Enforce status transitions in backend services.
+- Keep original intake answers and original extracted text immutable after submission.
+- Use generated UUID storage keys; never derive filesystem paths from user input.
+- Store uploaded files outside public static directories.
+- Verify file signatures/content, MIME, extension, file size, and PDF page limits.
+- Reject unsupported formats and oversized files with typed errors.
+- Never expose filesystem paths in API responses.
+- Do not log request bodies, patient data, extracted text, AI prompts/output, or secrets.
+- Return consistent error envelopes and appropriate HTTP status codes.
+- Configure request body limits, upload limits, and processing timeouts.
+- Demo API is unauthenticated: bind to localhost for local use and use synthetic data only.

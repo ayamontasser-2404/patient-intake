@@ -1,0 +1,17 @@
+---
+description: Shared API and domain schemas using Zod.
+globs: packages/contracts/**/*.ts
+---
+
+# Contract Rules
+
+- Zod schemas are the runtime source of truth; infer TypeScript types with `z.infer`.
+- Do not maintain duplicate handwritten interfaces when they can be inferred from schemas.
+- Keep API request/response schemas separate from persistence models where their responsibilities differ.
+- Define enums centrally, especially intake and document statuses.
+- Distinguish `not_provided`, `none_reported`, and `reported`; an empty array must not imply a negative medical history.
+- Model each summary fact with a value and source references.
+- Source types are `patient_form` or `uploaded_document`; missing-information entries may use an explicit `not_specified` marker.
+- Validate optional fields, string lengths, array sizes, dates, and enum values.
+- Avoid overly permissive schemas and `z.any()`.
+- Add schema tests for valid, invalid, and boundary cases.
