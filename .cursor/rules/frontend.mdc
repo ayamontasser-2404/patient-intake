@@ -1,0 +1,21 @@
+---
+description: React and TypeScript frontend conventions.
+globs: apps/web/**/*.{ts,tsx}
+---
+
+# Frontend Rules
+
+- Use functional React components and TypeScript.
+- Keep page composition, feature logic, reusable UI, and API access separated.
+- Organize code by feature: intake, dashboard, documents, review.
+- Use React Hook Form with shared Zod schemas for forms.
+- Use TanStack Query for server state; do not duplicate server state in local component state.
+- Keep local state local; avoid introducing a global state library unless a real need is demonstrated.
+- Never call OCR libraries or AI providers directly from the browser.
+- Never put secrets in Vite environment variables. Anything exposed to the browser is public.
+- Render OCR and LLM text as plain text; never inject it as HTML.
+- Show loading, empty, success, validation, and error states.
+- Make forms keyboard accessible with labels, useful errors, focus handling, and semantic HTML.
+- Use responsive layouts and accessible color contrast.
+- Do not display AI-generated content as verified clinical truth. Label it as AI-assisted and awaiting human review.
+- Keep source references visible next to summarized facts.
